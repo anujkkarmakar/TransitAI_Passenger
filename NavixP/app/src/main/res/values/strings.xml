@@ -1,0 +1,62 @@
+<resources>
+    <!-- APPLICATION NAME -->
+    <string name="app_name">TransitAI Passenger</string>
+
+    <!-- APPLICATION DESCRIPTION -->
+    <string name="log_in">Welcome Back</string>
+    <string name="sign_up">Get Started</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="loginBG">Log In</string>
+    <string name="password">Enter password</string>
+    <string name="email">Enter email</string>
+    <string name="don_t_have_an_account">"Don't have an account ?"</string>
+    <string name="welcome">Welcome Back!</string>
+    <string name="name">Enter name</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="profile">Profile</string>
+    <string name="app_desc">Manage your ticket with ease</string>
+    <string name="open_nav_bar">Open Navigation Drawer</string>
+    <string name="close_nav_bar">Close Navigation Drawer</string>
+    <string name="update">Update</string>
+    <string name="resend_verification_email">Resend Verification Email</string>
+
+    <!--      NAMES FOR ON-BOARDING ACTIVITY      -->
+    <string name="screen1">All in one solution</string>
+    <string name="screen2">Track bus</string>
+    <string name="screen3">Feature-rich Dashboard</string>
+    <string name="screen1desc">Easy UI which helps you to navigate and use Navix with ease. No ads, no distractions. Our guarantee !</string>
+    <string name="screen2desc">Arrived late and bus left :(\nWorry no more. You can track bus in real-time. With timely notification, you will never MISS a bus.</string>
+    <string name="screen3desc">Dashboard has features to help you manage your ticket and grievances. We are here to assist you anytime.</string>
+    <string name="startDesc">Welcome to TransitAI Passenger App\n\nClick on Get Started to explore.</string>
+    <string name="pdf">PDF</string>
+    <string name="assistant">Ask Gemini</string>
+    <string name="download">Download</string>
+
+    <!--      NAMES FOR PROFILE ACTIVITY      -->
+    <string-array name="role_array">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer not to say</item>
+    </string-array>
+
+    <!--      NAMES FOR ABOUT US ACTIVITY      -->
+    <string name="home_icon">Home Icon</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="contact_info">Dr. Shiladitya Pujari\nMentor, Anuvadak\n\nThe University Institute of Technology,\nThe University of Burdwan\n\nAddress: Golapbag (North), G.T. Road,\nBurdwan - 713104\n\nEmail ID: spj[at]ladak.love.com\n\nContact Number: 011-29581423</string>
+    <string name="desc">Language translation plays a crucial role in bridging understanding, fostering cooperation, and promoting peace across diverse cultures. Our innovative application, Anuvadak, leverages cutting-edge technology to facilitate seamless communication, offering a comprehensive suite of features.</string>
+    <string name="send_location">Send Location</string>
+    <string name="stop_location">Stop Location</string>
+
+
+        <string name="from">From</string>
+        <string name="to">To</string>
+        <string name="search_routes">Search Routes</string>
+        <string name="direct_distance">Direct Distance</string>
+        <string name="available_routes">Available Routes</string>
+    <string name="login">Login</string>
+
+</resources>
