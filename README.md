@@ -45,7 +45,6 @@ The application follows MVVM (Model-View-ViewModel) architecture pattern ensurin
   - Android Studio
   - Firebase SDK
   - Material Design Components
-  - [Add other major libraries used]
 
 ## Screenshots 📱
 <div align="center">
