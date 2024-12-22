@@ -49,8 +49,8 @@ The application follows MVVM (Model-View-ViewModel) architecture pattern ensurin
 
 ## Screenshots 📱
 <div align="center">
-<img src="docs/screenshots/start_screen.jpeg" width="200"/>
 <img src="docs/screenshots/home_screen.jpeg" width="200"/>
+<img src="docs/screenshots/start_screen.jpeg" width="200"/>
 <img src="docs/screenshots/nav_bar.jpeg" width="200"/>
 <img src="docs/screenshots/dashboard.jpeg" width="200"/>
 <img src="docs/screenshots/book_ticket.jpeg" width="200"/>
