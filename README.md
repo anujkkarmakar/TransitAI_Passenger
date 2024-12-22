@@ -1,7 +1,7 @@
 # TransitAI Passenger 🚌
 
 <div align="center">
-<img src="docs/assets/banner.png" alt="TransitAI Passenger Banner"/>
+<img src="docs/assets/banner.jpeg" alt="TransitAI Passenger Banner"/>
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
