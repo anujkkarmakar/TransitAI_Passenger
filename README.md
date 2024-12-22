@@ -118,7 +118,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments 🙏
 - Delhi Transport Corporation (DTC)
 - Smart India Hackathon 2024
-- [Other acknowledgments]
 
 ---
 <div align="center">
