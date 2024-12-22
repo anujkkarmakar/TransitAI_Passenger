@@ -60,11 +60,10 @@ The application follows MVVM (Model-View-ViewModel) architecture pattern ensurin
 ## Getting Started 🚀
 
 ### Prerequisites
-- Android Studio Arctic Fox or later
-- JDK 15 or higher
-- Android SDK API 21 or higher
-- Firebase account
-
+   - Android Studio Arctic Fox or later
+   - JDK 15 or higher
+   - Android SDK API 32 or higher
+   - Firebase account
 ### Installation Steps
 1. Download and extract the ZIP file
    ```bash
