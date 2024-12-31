@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 4rem; /* Adjusts scroll position to account for fixed header */
+        }
+
+        .section {
+            scroll-margin-top: 4rem; /* Ensures sections don't get hidden under the navbar */
+        }
+
+        /* Active link styles */
+        .nav-link-active {
+            color: #4F46E5;
+            border-bottom: 2px solid #4F46E5;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransitAI Passenger - Modern Bus Ticketing Solution</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav x-data="{ isOpen: false }" class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-indigo-600">TransitAI</span>
+                    </div>
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="#overview" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            Overview
+                        </a>
+                        <a href="#features" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            Features
+                        </a>
+                        <a href="#how-to-use" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            How to Use
+                        </a>
+                        <a href="#screenshots" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            Screenshots
+                        </a>
+                        <a href="#tech-stack" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            Tech Stack
+                        </a>
+                        <a href="#download" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
+                            Download
+                        </a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button @click="isOpen = !isOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" x-show="!isOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="h-6 w-6" x-show="isOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="isOpen" class="md:hidden bg-white border-b border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#overview" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    Overview
+                </a>
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    Features
+                </a>
+                <a href="#how-to-use" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    How to Use
+                </a>
+                <a href="#screenshots" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    Screenshots
+                </a>
+                <a href="#tech-stack" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    Tech Stack
+                </a>
+                <a href="#download" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                    Download
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-32 bg-gradient-to-r from-indigo-600 to-blue-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                    <span class="block">TransitAI Passenger</span>
+                    <span class="block text-indigo-200">Modern Bus Ticketing Solution</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-indigo-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Revolutionizing bus ticketing with digital solutions and environmental impact tracking
+                </p>
+                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                    <div class="rounded-md shadow">
+                        <a href="https://github.com/anujkkarmakar/TransitAI_Passenger/releases" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-800 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                            Download App
+                        </a>
+                    </div>
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                        <a href="https://github.com/anujkkarmakar/TransitAI_Passenger" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Smart Features for Modern Travel
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Comprehensive suite of features designed to make your bus travel experience seamless and eco-friendly
+                </p>
+            </div>
+    
+            <div class="mt-20">
+                <!-- Core Features Section -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Core Features</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- User Authentication -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="bg-indigo-500 p-4">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white">
+                                    <i class="fas fa-user-shield text-2xl text-indigo-500"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 mb-2">User Authentication</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Secure Firebase authentication</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Email verification</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Password recovery</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Profile management</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Digital Ticketing -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="bg-indigo-500 p-4">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white">
+                                    <i class="fas fa-ticket-alt text-2xl text-indigo-500"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 mb-2">Digital Ticketing</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Quick ticket booking</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>QR code verification</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>PDF ticket generation</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Email confirmation</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Environmental Impact -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="bg-indigo-500 p-4">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white">
+                                    <i class="fas fa-leaf text-2xl text-indigo-500"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 mb-2">Environmental Impact</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>CO2 emission tracking</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Environmental statistics</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Impact visualization</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Green travel insights</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Booking Features -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Booking Features</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Ticket Management</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-clock text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Real-time booking status updates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-history text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Complete booking history</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-ban text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Easy cancellation within 4 hours</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-download text-indigo-500 mt-1 mr-3"></i>
+                                    <span>PDF ticket download option</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Journey Options</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-route text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Multiple route options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-snowflake text-indigo-500 mt-1 mr-3"></i>
+                                    <span>AC/Non-AC bus selection</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exchange-alt text-indigo-500 mt-1 mr-3"></i>
+                                    <span>One-way and return journey options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-calculator text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Dynamic fare calculation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Advanced Features -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Advanced Features</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- User Experience -->
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-4">User Experience</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-mobile-alt text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Intuitive mobile interface</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-bell text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Push notifications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-language text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Multi-language support (coming soon)</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <!-- Security -->
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Security</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shield-alt text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Encrypted data transmission</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-qrcode text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Secure QR verification</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-key text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Session management</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <!-- Analytics -->
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Analytics</h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-line text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Travel history analytics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tree text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Environmental impact metrics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-money-bill-wave text-indigo-500 mt-1 mr-3"></i>
+                                    <span>Cost savings analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use -->
+    <section id="how-to-use" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Guide</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    How to Use TransitAI Passenger
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Complete guide to getting started and making the most of TransitAI Passenger
+                </p>
+            </div>
+    
+            <div class="mt-16">
+                <div class="space-y-12">
+                    <!-- Step 1: Installation -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">1</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Installation and Setup</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">System Requirements:</p>
+                                <ul class="list-disc ml-6 text-gray-600 space-y-2">
+                                    <li>Android 12 or higher</li>
+                                    <li>Minimum 2GB RAM</li>
+                                    <li>100MB free storage</li>
+                                    <li>Active internet connection</li>
+                                    <li>Location services enabled</li>
+                                </ul>
+                                <p class="text-gray-600 mt-4">Installation Steps:</p>
+                                <ul class="list-decimal ml-6 text-gray-600 space-y-2">
+                                    <li>Download the APK from GitHub releases</li>
+                                    <li>Enable "Install from Unknown Sources" in settings</li>
+                                    <li>Install the application</li>
+                                    <li>Grant required permissions when prompted</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Step 2: Account Creation -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">2</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Account Creation and Login</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">New User Registration:</p>
+                                <ul class="list-disc ml-6 text-gray-600 space-y-2">
+                                    <li>Open the app and click "Register"</li>
+                                    <li>Enter your name, email, and password</li>
+                                    <li>Verify your email address</li>
+                                    <li>Complete your profile with additional details</li>
+                                </ul>
+                                <p class="text-gray-600 mt-4">Existing User Login:</p>
+                                <ul class="list-disc ml-6 text-gray-600 space-y-2">
+                                    <li>Enter your registered email</li>
+                                    <li>Enter your password</li>
+                                    <li>Use "Forgot Password" if needed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Step 3: Booking a Ticket -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">3</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Booking Your Ticket</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">Booking Process:</p>
+                                <ul class="list-decimal ml-6 text-gray-600 space-y-2">
+                                    <li>Select "Book Ticket" from the main menu</li>
+                                    <li>Choose your departure and destination stops</li>
+                                    <li>Select journey type (One Way/Return)</li>
+                                    <li>Choose bus type (AC/Non-AC)</li>
+                                    <li>View fare calculation</li>
+                                    <li>Enter mobile number</li>
+                                    <li>Confirm booking</li>
+                                </ul>
+                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-info-circle text-yellow-400"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-yellow-700">
+                                                You'll receive a confirmation email with ticket details and QR code
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Step 4: Using Your Ticket -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">4</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Using Your Ticket</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">During Your Journey:</p>
+                                <ul class="list-disc ml-6 text-gray-600 space-y-2">
+                                    <li>Access ticket from "My Tickets" section</li>
+                                    <li>Show QR code to conductor for verification</li>
+                                    <li>Keep ticket active screen accessible</li>
+                                    <li>Ensure phone has sufficient battery</li>
+                                </ul>
+                                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-lightbulb text-blue-400"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-blue-700">
+                                                Pro Tip: Download PDF version for offline access
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Step 5: Managing Bookings -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">5</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Managing Your Bookings</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">Ticket Management:</p>
+                                <ul class="list-disc ml-6 text-gray-600 space-y-2">
+                                    <li>View all tickets in "My Tickets" section</li>
+                                    <li>Check active and expired tickets</li>
+                                    <li>Download ticket PDF</li>
+                                    <li>Cancel tickets (within 4 hours of booking)</li>
+                                    <li>View booking history</li>
+                                </ul>
+                                <div class="bg-green-50 border-l-4 border-green-400 p-4 mt-4">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-leaf text-green-400"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-green-700">
+                                                Track your environmental impact through the dashboard
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Troubleshooting -->
+                    <div class="relative">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <span class="text-lg font-bold">6</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Troubleshooting</h3>
+                        </div>
+                        <div class="mt-4 ml-16">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">Common Issues and Solutions:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-lg shadow-md p-4">
+                                        <h4 class="font-semibold text-gray-900">QR Code Not Scanning</h4>
+                                        <ul class="list-disc ml-4 text-gray-600 mt-2">
+                                            <li>Increase screen brightness</li>
+                                            <li>Clean phone screen</li>
+                                            <li>Ensure good lighting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg shadow-md p-4">
+                                        <h4 class="font-semibold text-gray-900">Booking Failed</h4>
+                                        <ul class="list-disc ml-4 text-gray-600 mt-2">
+                                            <li>Check internet connection</li>
+                                            <li>Verify payment details</li>
+                                            <li>Try again after few minutes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="lg:text-center mb-16">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Visual Tour</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    App Screenshots
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Take a visual journey through TransitAI Passenger's intuitive interface
+                </p>
+            </div>
+    
+            <!-- Screenshot Categories -->
+            <div class="space-y-20">
+                <!-- Authentication Screens -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Authentication & Profile</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/login_screen.png" alt="Login Screen" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Login Screen</h4>
+                                <p class="text-gray-600 text-sm mt-1">Secure login with email and password authentication</p>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/register_screen.png" alt="Registration Screen" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Registration</h4>
+                                <p class="text-gray-600 text-sm mt-1">Quick and easy account creation process</p>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/start_screen.jpeg" alt="Profile Screen" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Profile Management</h4>
+                                <p class="text-gray-600 text-sm mt-1">User profile with travel history and preferences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Booking Process -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Ticket Booking Process</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/route_selection.png" alt="Route Selection" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Route Selection</h4>
+                                <p class="text-gray-600 text-sm mt-1">Choose your departure and destination points</p>
+                                <div class="mt-2 flex items-center text-sm text-indigo-600">
+                                    <span>Step 1</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/journey_type.png" alt="Journey Type" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Journey Type</h4>
+                                <p class="text-gray-600 text-sm mt-1">Select one-way or return journey</p>
+                                <div class="mt-2 flex items-center text-sm text-indigo-600">
+                                    <span>Step 2</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/fare_details.png" alt="Fare Details" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Fare Details & Payment</h4>
+                                <p class="text-gray-600 text-sm mt-1">View fare breakdown and total cost. Then pay the fare.</p>
+                                <div class="mt-2 flex items-center text-sm text-indigo-600">
+                                    <span>Step 3</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/confirmation.png" alt="Booking Confirmation" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Confirmation</h4>
+                                <p class="text-gray-600 text-sm mt-1">Booking confirmation with ticket details</p>
+                                <div class="mt-2 flex items-center text-sm text-indigo-600">
+                                    <span>Step 4</span>
+                                    <i class="fas fa-check ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Ticket Management -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Ticket Management</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/active_tickets.png" alt="Active Tickets" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Active Tickets</h4>
+                                <p class="text-gray-600 text-sm mt-1">View and manage your current tickets</p>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/ticket_details.png" alt="Ticket Details" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Ticket Details</h4>
+                                <p class="text-gray-600 text-sm mt-1">Detailed view with QR code</p>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/booking_history.png" alt="Booking History" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Booking History</h4>
+                                <p class="text-gray-600 text-sm mt-1">Complete history of your bookings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Environmental Impact -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Environmental Impact</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/dashboard.png" alt="Impact Dashboard" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Impact Dashboard</h4>
+                                <p class="text-gray-600 text-sm mt-1">Track your environmental savings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Interactive Preview -->
+            <div class="mt-20 text-center">
+                <a href="https://youtu.be/HTf8Q3TGhcc" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    <i class="fab fa-youtube mr-2"></i>
+                    Watch App Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with Part 2 -->
+     <!-- Tech Stack -->
+    <section id="tech-stack" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Technology</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Built with Modern Technologies
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                    <!-- Frontend -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Frontend</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fab fa-java mr-2"></i>Java</li>
+                            <li><i class="fas fa-code mr-2"></i>XML</li>
+                            <li><i class="fab fa-android mr-2"></i>Android SDK</li>
+                            <li><i class="fas fa-palette mr-2"></i>Material Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Backend</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-server mr-2"></i>Firebase</li>
+                            <li><i class="fas fa-database mr-2"></i>Firestore</li>
+                            <li><i class="fas fa-cloud mr-2"></i>Cloud Storage</li>
+                            <li><i class="fas fa-bell mr-2"></i>Cloud Messaging</li>
+                        </ul>
+                    </div>
+
+                    <!-- Architecture -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Architecture</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-layer-group mr-2"></i>MVVM Pattern</li>
+                            <li><i class="fas fa-code-branch mr-2"></i>Repository Pattern</li>
+                            <li><i class="fas fa-cube mr-2"></i>Clean Architecture</li>
+                            <li><i class="fas fa-cogs mr-2"></i>Dependency Injection</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Tools</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-tools mr-2"></i>Android Studio</li>
+                            <li><i class="fab fa-git-alt mr-2"></i>Git</li>
+                            <li><i class="fab fa-github mr-2"></i>GitHub</li>
+                            <li><i class="fas fa-bug mr-2"></i>Firebase Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Download</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Get Started with TransitAI Passenger
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                    <div class="px-6 py-8 sm:p-10">
+                        <div class="flex items-center justify-center">
+                            <div class="space-y-4">
+                                <h3 class="text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl">
+                                    Latest Version: v1.0.0
+                                </h3>
+                                <ul class="space-y-4 text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        Release Date: December 22, 2024
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        Size: 25MB
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                        Android 12+ Compatible
+                                    </li>
+                                </ul>
+                                <div class="mt-8">
+                                    <a href="https://github.com/anujkkarmakar/TransitAI_Passenger/releases" 
+                                       class="w-full flex items-center justify-center px-8 py-3 border border-transparent 
+                                              text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 
+                                              md:py-4 md:text-lg md:px-10">
+                                        Download Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Get in Touch
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Developer Contact</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-user mr-2"></i>
+                                Anuj Kumar Karmakar
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                anujkarmakar999@gmail.com
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fab fa-github mr-2"></i>
+                                <a href="https://github.com/anujkkarmakar" class="text-indigo-600 hover:text-indigo-800">
+                                    GitHub Profile
+                                </a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fab fa-linkedin mr-2"></i>
+                                <a href="https://www.linkedin.com/in/anujkkarmakar" class="text-indigo-600 hover:text-indigo-800">
+                                    LinkedIn Profile
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Project Links</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fab fa-github mr-2"></i>
+                                <a href="https://github.com/anujkkarmakar/TransitAI_Passenger" class="text-indigo-600 hover:text-indigo-800">
+                                    Project Repository
+                                </a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-bug mr-2"></i>
+                                <a href="https://github.com/anujkkarmakar/TransitAI_Passenger/issues" class="text-indigo-600 hover:text-indigo-800">
+                                    Report Issues
+                                </a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-download mr-2"></i>
+                                <a href="https://github.com/anujkkarmakar/TransitAI_Passenger/releases" class="text-indigo-600 hover:text-indigo-800">
+                                    Latest Release
+                                </a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-book mr-2"></i>
+                                <a href="https://github.com/anujkkarmakar/TransitAI_Passenger/wiki" class="text-indigo-600 hover:text-indigo-800">
+                                    Documentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-base text-gray-400">
+                    Built with ❤️ for Smart India Hackathon 2024
+                </p>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="https://github.com/anujkkarmakar" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anujkkarmakar" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </div>
+                <p class="mt-8 text-base text-gray-400">
+                    &copy; 2024 TransitAI Passenger. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="fixed bottom-8 right-8 p-4 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 
+                   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Highlight active section in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+            function updateActiveLink() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= (sectionTop - 150)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+    
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-link-active');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('nav-link-active');
+                    }
+                });
+            }
+    
+            // Update active link on scroll
+            window.addEventListener('scroll', updateActiveLink);
+            
+            // Initial check for active section
+            updateActiveLink();
+    
+            // Close mobile menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) { // Mobile view
+                        document.querySelector('[x-data]').__x.$data.isOpen = false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
