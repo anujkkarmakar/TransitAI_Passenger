@@ -25,79 +25,42 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav x-data="{ isOpen: false }" class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-2xl font-bold text-indigo-600">TransitAI</span>
-                    </div>
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:ml-6 md:flex md:space-x-8">
-                        <a href="#overview" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            Overview
-                        </a>
-                        <a href="#features" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            Features
-                        </a>
-                        <a href="#how-to-use" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            How to Use
-                        </a>
-                        <a href="#screenshots" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            Screenshots
-                        </a>
-                        <a href="#tech-stack" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            Tech Stack
-                        </a>
-                        <a href="#download" class="inline-flex items-center px-1 pt-1 text-gray-900 hover:text-indigo-600 border-transparent">
-                            Download
-                        </a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="flex items-center md:hidden">
-                    <button @click="isOpen = !isOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" x-show="!isOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="h-6 w-6" x-show="isOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+    
+   <!-- Header/Navigation -->
+   <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">TransitAI</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#overview" class="text-gray-700 hover:text-blue-600 transition-colors">Overview</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#how-to-use" class="text-gray-700 hover:text-blue-600 transition-colors">How to Use</a>
+                <a href="#screenshots" class="text-gray-700 hover:text-blue-600 transition-colors">Screenshots</a>
+                <a href="#tech-stack" class="text-gray-700 hover:text-blue-600 transition-colors">Tech Stack</a>
+                <a href="#download" class="text-gray-700 hover:text-blue-600 transition-colors">Download</a>
             </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 hover:text-blue-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
-
-        <!-- Mobile menu -->
-        <div x-show="isOpen" class="md:hidden bg-white border-b border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#overview" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    Overview
-                </a>
-                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    Features
-                </a>
-                <a href="#how-to-use" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    How to Use
-                </a>
-                <a href="#screenshots" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    Screenshots
-                </a>
-                <a href="#tech-stack" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    Tech Stack
-                </a>
-                <a href="#download" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
-                    Download
-                </a>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden">
+            <div class="py-4 space-y-4">
+                <a href="#overview" class="block text-gray-700 hover:text-blue-600 transition-colors">Overview</a>
+                <a href="#features" class="block text-gray-700 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#how-to-use" class="block text-gray-700 hover:text-blue-600 transition-colors">How to Use</a>
+                <a href="#screenshots" class="block text-gray-700 hover:text-blue-600 transition-colors">Screenshots</a>
+                <a href="#tech-stack" class="block text-gray-700 hover:text-blue-600 transition-colors">Tech Stack</a>
+                <a href="#download" class="block text-gray-700 hover:text-blue-600 transition-colors">Download</a>
             </div>
         </div>
     </nav>
+</header>
 
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-32 bg-gradient-to-r from-indigo-600 to-blue-500">
+    <section id="overview" class="pt-20 pb-32 bg-gradient-to-r from-indigo-600 to-blue-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
@@ -546,7 +509,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-8">Authentication & Profile</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/login_screen.png" alt="Login Screen" class="w-full h-auto">
+                            <img src="./screenshots/login_screen.jpeg" alt="Login Screen" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Login Screen</h4>
                                 <p class="text-gray-600 text-sm mt-1">Secure login with email and password authentication</p>
@@ -554,7 +517,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/register_screen.png" alt="Registration Screen" class="w-full h-auto">
+                            <img src="./screenshots/register_screen.jpeg" alt="Registration Screen" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Registration</h4>
                                 <p class="text-gray-600 text-sm mt-1">Quick and easy account creation process</p>
@@ -562,7 +525,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/start_screen.jpeg" alt="Profile Screen" class="w-full h-auto">
+                            <img src="./screenshots/profile_screen.jpeg" alt="Profile Screen" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Profile Management</h4>
                                 <p class="text-gray-600 text-sm mt-1">User profile with travel history and preferences</p>
@@ -576,7 +539,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-8">Ticket Booking Process</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/route_selection.png" alt="Route Selection" class="w-full h-auto">
+                            <img src="./screenshots/select_route.jpeg" alt="Route Selection" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Route Selection</h4>
                                 <p class="text-gray-600 text-sm mt-1">Choose your departure and destination points</p>
@@ -588,7 +551,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/journey_type.png" alt="Journey Type" class="w-full h-auto">
+                            <img src="./screenshots/journey_type.jpeg" alt="Journey Type" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Journey Type</h4>
                                 <p class="text-gray-600 text-sm mt-1">Select one-way or return journey</p>
@@ -600,10 +563,10 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/fare_details.png" alt="Fare Details" class="w-full h-auto">
+                            <img src="./screenshots/fare_details.jpeg" alt="Fare Details" class="w-full h-auto">
                             <div class="p-4">
-                                <h4 class="font-semibold text-gray-900">Fare Details & Payment</h4>
-                                <p class="text-gray-600 text-sm mt-1">View fare breakdown and total cost. Then pay the fare.</p>
+                                <h4 class="font-semibold text-gray-900">Fare Details</h4>
+                                <p class="text-gray-600 text-sm mt-1">View fare breakdown and total cost</p>
                                 <div class="mt-2 flex items-center text-sm text-indigo-600">
                                     <span>Step 3</span>
                                     <i class="fas fa-arrow-right ml-2"></i>
@@ -612,7 +575,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/confirmation.png" alt="Booking Confirmation" class="w-full h-auto">
+                            <img src="./screenshots/confirmation.jpeg" alt="Booking Confirmation" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Confirmation</h4>
                                 <p class="text-gray-600 text-sm mt-1">Booking confirmation with ticket details</p>
@@ -630,7 +593,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-8">Ticket Management</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/active_tickets.png" alt="Active Tickets" class="w-full h-auto">
+                            <img src="./screenshots/active_tickets.jpeg" alt="Active Tickets" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Active Tickets</h4>
                                 <p class="text-gray-600 text-sm mt-1">View and manage your current tickets</p>
@@ -638,7 +601,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/ticket_details.png" alt="Ticket Details" class="w-full h-auto">
+                            <img src="./screenshots/ticket_details.jpeg" alt="Ticket Details" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Ticket Details</h4>
                                 <p class="text-gray-600 text-sm mt-1">Detailed view with QR code</p>
@@ -646,7 +609,7 @@
                         </div>
     
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/booking_history.png" alt="Booking History" class="w-full h-auto">
+                            <img src="./screenshots/booking_history.jpeg" alt="Booking History" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Booking History</h4>
                                 <p class="text-gray-600 text-sm mt-1">Complete history of your bookings</p>
@@ -660,10 +623,18 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-8">Environmental Impact</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="./screenshots/dashboard.png" alt="Impact Dashboard" class="w-full h-auto">
+                            <img src="./screenshots/impact_dashboard.jpeg" alt="Impact Dashboard" class="w-full h-auto">
                             <div class="p-4">
                                 <h4 class="font-semibold text-gray-900">Impact Dashboard</h4>
                                 <p class="text-gray-600 text-sm mt-1">Track your environmental savings</p>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./screenshots/environmental_stats.jpeg" alt="Environmental Statistics" class="w-full h-auto">
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900">Environmental Statistics</h4>
+                                <p class="text-gray-600 text-sm mt-1">Detailed environmental impact analysis</p>
                             </div>
                         </div>
                     </div>
@@ -680,8 +651,7 @@
         </div>
     </section>
 
-    <!-- Continue with Part 2 -->
-     <!-- Tech Stack -->
+    <!-- Tech Stack -->
     <section id="tech-stack" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
@@ -891,14 +861,23 @@
     </button>
 
     <script>
-        // Highlight active section in navigation
         document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            const mobileMenu = document.querySelector('div.md\\:hidden');
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
     
+            // Toggle mobile menu
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+    
+            // Update active link based on scroll
             function updateActiveLink() {
                 let currentSection = '';
-                
+    
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
@@ -915,17 +894,14 @@
                 });
             }
     
-            // Update active link on scroll
             window.addEventListener('scroll', updateActiveLink);
-            
-            // Initial check for active section
-            updateActiveLink();
+            updateActiveLink(); // Initial check for active section
     
             // Close mobile menu when clicking a link
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    if (window.innerWidth < 768) { // Mobile view
-                        document.querySelector('[x-data]').__x.$data.isOpen = false;
+                    if (window.innerWidth < 768 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
                     }
                 });
             });
